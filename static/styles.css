@@ -1,0 +1,325 @@
+:root {
+    --bg: #0f172a;
+    --panel: #111827;
+    --accent: #22c55e;
+    --accent-2: #60a5fa;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --chip: #1f2937;
+    --user: #2563eb;
+    --bot: #10b981;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(1000px 600px at 80% -10%, #1f2937, var(--bg));
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.app {
+    width: min(960px, 100%);
+    height: min(88vh, 900px);
+    background: linear-gradient(180deg, #0b1220, #0b1220ee 50%, #0b1220);
+    border: 1px solid #1f2937;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .03);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #1f2937;
+    background: linear-gradient(180deg, #0c1426, #0c1426f0);
+    position: relative;
+}
+
+.badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #0ea5e9, #22c55e);
+    font-weight: 700;
+    color: white;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+
+.title h1 {
+    font-size: 16px;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 700
+}
+
+.title span {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.transcript {
+    padding: 20px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scroll-behavior: smooth;
+    background:
+        radial-gradient(600px 300px at 10% -10%, rgba(34, 197, 94, .08), transparent 60%),
+        radial-gradient(800px 400px at 120% 10%, rgba(59, 130, 246, .08), transparent 60%);
+}
+
+.msg {
+    max-width: min(75ch, 90%);
+    padding: 12px 14px;
+    border-radius: 14px;
+    line-height: 1.45;
+    font-size: 15px;
+    position: relative;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .04) inset;
+}
+
+.msg.bot {
+    align-self: flex-start;
+    background: #0d1b2a;
+    border: 1px solid #1f2937
+}
+
+.msg.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    border: 1px solid rgba(255, 255, 255, .08)
+}
+
+.meta {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px
+}
+
+.chip {
+    background: var(--chip);
+    border: 1px solid #263243;
+    color: #d1d5db;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .15s ease
+}
+
+.chip:hover {
+    background: #263243
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    margin: 8px 0
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #1f2937
+}
+
+.inputbar {
+    border-top: 1px solid #1f2937;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: linear-gradient(0deg, #0b1220, #0b1220f0)
+}
+
+.input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: #0c1426;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 8px 10px;
+    flex: 1
+}
+
+.input input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    width: 100%;
+    font-size: 15px
+}
+
+.button {
+    background: linear-gradient(135deg, var(--accent), #16a34a);
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .05s ease, filter .2s ease
+}
+
+.button:active {
+    transform: translateY(1px)
+}
+
+.ghost {
+    background: #0c1426;
+    border: 1px solid #1f2937;
+    color: #d1d5db
+}
+
+/* status dot */
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent)
+}
+
+.status {
+    position: absolute;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 12px
+}
+
+/* Quick Links */
+.quick-links {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    z-index: 30;
+}
+
+#quickLinksBtn {
+    background: #0c1426;
+    border: 1px solid #1f2937;
+    color: #d1d5db;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 44px;
+    right: 0;
+    background: #0c1426;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    min-width: 220px;
+    overflow: hidden;
+    transform-origin: top;
+    transform: translateY(-6px) scaleY(0);
+    opacity: 0;
+    transition: transform 220ms cubic-bezier(.2, .9, .2, 1), opacity 180ms ease;
+}
+
+.menu.show {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+}
+
+.menu a {
+    padding: 10px 12px;
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 14px
+}
+
+.menu a:hover {
+    background: #263243
+}
+
+.hidden {
+    display: none
+}
+
+/* small helpers */
+code,
+.mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;
+}
+
+a {
+    color: #93c5fd
+}
+
+.hidden {
+    display: none
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .header .title h1 {
+        font-size: 14px
+    }
+
+    .header .title span {
+        font-size: 11px
+    }
+
+    #quickLinksBtn {
+        padding: 4px 8px;
+        font-size: 16px
+    }
+
+    .app {
+        width: calc(100% - 32px);
+        height: calc(92vh)
+    }
+
+    .transcript {
+        padding: 12px
+    }
+}

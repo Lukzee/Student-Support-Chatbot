@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Student Support Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Student support chatbot">
+        <div class="header">
+            <div class="badge">SS</div>
+            <div class="title">
+                <h1>Student Support Assistant</h1>
+                <span>24/7 self-service · Application, Admission, Registration issue</span>
+            </div>
+            <div class="status">
+                <span class="dot"></span>
+                <span>Online</span>
+            </div>
+
+            <!-- Quick Links Button -->
+            <div class="quick-links">
+                <button id="quickLinksBtn" title="Quick Links">☰</button>
+                <div id="quickLinksMenu" class="menu hidden" aria-hidden="true">
+                    <a href="https://www.fptb.edu.ng" target="_blank" rel="noopener">Official Website</a>
+                    <a href="https://portal.fptb.edu.ng/admissions" target="_blank" rel="noopener">Admission Portal</a>
+                    <a href="https://portal.fptb.edu.ng/application" target="_blank" rel="noopener">Online
+                        Application</a>
+                    <a href="https://portal.fptb.edu.ng/student" target="_blank" rel="noopener">Student Portal</a>
+                    <a href="mailto:info@fptb.edu.ng">Email Support</a>
+                    <a href="tel:+2347061104170">Call Support</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="transcript" class="transcript" aria-live="polite" aria-atomic="false"></div>
+
+        <div class="inputbar">
+            <button id="clearBtn" class="button ghost" title="Clear conversation">Clear</button>
+            <div class="input">
+                <input id="userInput" type="text" placeholder="Type your message… (e.g., How do I apply for admission?)"
+                    autocomplete="off" />
+            </div>
+            <button id="sendBtn" class="button">Send</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
