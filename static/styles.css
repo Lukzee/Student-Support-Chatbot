@@ -32,7 +32,7 @@ body {
 
 .app {
     width: min(960px, 100%);
-    height: min(88vh, 900px);
+    height: min(80vh, 900px);
     background: linear-gradient(180deg, #0b1220, #0b1220ee 50%, #0b1220);
     border: 1px solid #1f2937;
     border-radius: 16px;
@@ -58,7 +58,10 @@ body {
     border-radius: 12px;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, #0ea5e9, #22c55e);
+    background-image: url(logo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-weight: 700;
     color: white;
 }
